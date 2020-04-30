@@ -13,8 +13,9 @@ class barang(models.Model):
         ('ADA', 'ADA'),
         ('KOSONG', 'KOSONG'),
     )
+    tgl_beli = models.DateField(auto_now_add=True, null=True, blank=True)
+    tgl_kdlws = models.DateField()
     status = models.CharField(choices=status, max_length=10)
-
     def __str__(self):
 
         return "{} {}".format(self.id, self.nama_barang)
