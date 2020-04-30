@@ -1,0 +1,47 @@
+{% extends "kelontong/index.html" %}
+{% block satu %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.nama_barang.label}}</label>
+                    {{table.nama_barang}}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.harga_beli.label}}</label>
+                    {{table.harga_beli}}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.harga_jual.label}}</label>
+                    {{table.harga_jual}}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.banyak_barang.label}}</label>
+                    {{table.banyak_barang}}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.jenis_barang.label}}</label>
+                    {{table.jenis_barang}}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.status.label}}</label>
+                    {{table.status}}
+                </div>
+            </div>
+        </table>
+        <button type="submit" class="btn btn-primary">Tambahkan</button>
+    </form>
+</div>
+{% endblock satu %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "snippets/styles.html" %}
+    {% block gaya %}
+    
+    {% endblock gaya%}
+    <title>{{title}}</title>
+</head>
+<body>
+{% include "snippets/navKelontong.html" %}
+
+{% block satu %}
+<div class="main" style="margin-left: 20px;">
+    <h4>TABEL BARANG</h4>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAMA_BARANG</th>
+          <th scope="col">HARGA_BELI</th>
+          <th scope="col">HARGA_JUAL</th>
+          <th scope="col">BANYAK_BARANG</th>
+          <th scope="col">JENIS_BARANG</th>
+          <th scope="col">STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in table %}
+        <tr>
+          <td>{{a.id}}</td>
+          <td>{{a.nama_barang}}</td>
+          <td>{{a.harga_beli}}</td>
+          <td>{{a.harga_jual}}</td>
+          <td>{{a.banyak_barang}}</td>
+          <td>{{a.jenis_barang}}</td>
+          <td>{{a.status}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <div class="main" style="margin-left: 20px; margin-bottom: 10px;">
+        <a href="{% url "kelontong:KelontongPembelian"%}" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Tambahakan</a>
+        </div>
+    </table>
+{% endblock satu %}
+
+{% include "snippets/script.html" %}
+</body>
+</html>
