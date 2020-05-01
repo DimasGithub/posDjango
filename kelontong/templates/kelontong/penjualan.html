@@ -1,0 +1,28 @@
+{% extends "kelontong/index.html" %}
+{% block satu %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.nama_barang.label}}</label>
+                    {{table.nama_barang}}
+                    <a href="{% url "kelontong:CekBarang" "tembelek" %}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true" style="margin-top: 10px;">Cek</a></td>
+                </div>
+            </div>            
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>{{table.banyak_beli.label}}</label>
+                    {{table.banyak_beli}}
+                </div>
+            </div>
+        </table>
+    {% if a == "on" %}
+    <button type="submit" class="btn btn-primary" >Tambahkan</button>
+    {% else %}
+    <button type="submit" class="btn btn-primary" disable>Tambahkan</button>
+    {% endif %}
+    </form>
+</div>
+{% endblock satu %}

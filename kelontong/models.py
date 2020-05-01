@@ -19,3 +19,10 @@ class barang(models.Model):
     def __str__(self):
 
         return "{} {}".format(self.id, self.nama_barang)
+class barangJualan(models.Model):
+    tanggal_jual = models.DateField(auto_now_add=True,blank=True)
+    nama_barang = models.CharField(max_length=10)
+    banyak_beli = models.IntegerField()
+    def __str__(self):
+    
+        return "{} {}".format(self.id, self.nama_barang)

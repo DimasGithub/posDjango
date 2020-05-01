@@ -1,4 +1,4 @@
-from .models import barang
+from .models import barang, barangJualan
 from django import forms
 
 class FormPembelian(forms.ModelForm):
@@ -23,3 +23,17 @@ class FormPembelian(forms.ModelForm):
             'jenis_barang':'JENIS BARANG',
             'status':'STATUS',
         }
+class FormJualan(forms.ModelForm):
+    class Meta:
+        model = barangJualan
+        fields = ('nama_barang','banyak_beli')
+        widgets = {      
+            'nama_barang': forms.TextInput(attrs={'class':'form-control', 'placeholder':'nama barang'}),
+            'banyak_beli':forms.TextInput(attrs={'class':'form-control','placeholder':'banyak pembelian'}),
+            }
+        labels = {
+            'nama_barang':'NAMA BARANG',
+            'banyak_beli':'BANYAK PEMBELIAN'
+        }
+
+    
